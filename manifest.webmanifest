@@ -1,0 +1,20 @@
+{
+  "name": "奇迹课程·持续更新阅读版",
+  "short_name": "奇迹课程",
+  "description": "自适应屏幕、可离线安装的课程阅读器，包含课文与罗伯·佩里注解。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4ecd8",
+  "theme_color": "#7b5c2e",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
