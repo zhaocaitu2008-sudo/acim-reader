@@ -1,5 +1,5 @@
-const CACHE='acim-reader-runtime-v5';
-const CORE=['./','./index.html','./app.css','./app.js','./manifest.webmanifest','./version.json','./lessons-index.json','./icon.svg'];
+const CACHE='acim-reader-runtime-v6';
+const CORE=['./','./index.html','./app.css','./app.js','./manifest.webmanifest','./version.json','./lessons-index.json','./icon.svg','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil((async()=>{const c=await caches.open(CACHE);await c.addAll(CORE);try{const idx=await fetch('./lessons-index.json',{cache:'no-store'}).then(r=>r.json());await c.addAll((idx.files||[]).map(x=>'./'+x))}catch(_){}})())});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()]))});
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==location.origin)return;e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(async()=>{return (await caches.match(e.request))||(e.request.mode==='navigate'?await caches.match('./index.html'):Response.error())}))});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==location.origin)return;e.respondWith(fetch(e.request).then(async r=>{if(r.ok){const c=await caches.open(CACHE);await c.put(e.request,r.clone())}return r}).catch(async()=>{return (await caches.match(e.request,{ignoreSearch:true}))||(e.request.mode==='navigate'?await caches.match('./index.html'):Response.error())}))});
