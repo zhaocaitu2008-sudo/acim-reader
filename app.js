@@ -51,7 +51,9 @@ function show(resetScroll=false){
   if(resetScroll&&location.hash){const u=new URL(location.href);u.hash='';history.replaceState(null,'',u)}
   updateURL();
   $('kicker').textContent=`${item.kind==='material'?'学习资料':`第 ${currentLesson} 课`} · ${item.version}`;
-  $('title').textContent=item.title;
+  const heading=$('title');
+  heading.textContent=item.title;
+  if(item.titleNote){const note=document.createElement('sup');note.textContent=' '+item.titleNote;heading.appendChild(note)}
   $('meta').textContent=`来源：${item.source||''} · 资料版本 ${BUILD.version||''}`;
   const vb=$('versionbar');vb.innerHTML='';
   arr.forEach(v=>{

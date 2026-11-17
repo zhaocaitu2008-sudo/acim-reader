@@ -685,5 +685,22 @@
         2298
       ]
     ]
+  },
+  {
+    "lesson": "workbook-forgiveness",
+    "title": "下篇一 · 何谓宽恕",
+    "kind": "material",
+    "version": "排版原页",
+    "view": "typeset",
+    "source": "一、何謂寬恕",
+    "images": [
+      "assets/workbook/forgiveness-typeset.webp"
+    ],
+    "imageSizes": [
+      [
+        1650,
+        2334
+      ]
+    ]
   }
 ]

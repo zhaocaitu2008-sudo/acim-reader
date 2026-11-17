@@ -603,24 +603,24 @@
     "kind": "material",
     "version": "中文原版",
     "view": "scan",
-    "source": "练习手册（下篇导言）",
+    "source": "下篇   导言",
     "images": [
-      "assets/workbook/intro-scan-01.webp",
-      "assets/workbook/intro-scan-02.webp",
-      "assets/workbook/intro-scan-03.webp"
+      "assets/workbook/intro-clear-01.webp",
+      "assets/workbook/intro-clear-02.webp",
+      "assets/workbook/intro-clear-03.webp"
     ],
     "imageSizes": [
       [
-        1801,
-        2400
+        1650,
+        2200
       ],
       [
-        1801,
-        2400
+        1650,
+        2255
       ],
       [
-        1801,
-        2400
+        1650,
+        2225
       ]
     ]
   },
